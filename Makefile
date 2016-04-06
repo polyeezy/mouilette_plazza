@@ -5,23 +5,26 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr  4 10:43:00 2016 Valerian Polizzi
-## Last update Wed Apr  6 14:53:23 2016 Valerian Polizzi
+## Last update Wed Apr  6 17:05:17 2016 Valerian Polizzi
 ##
 
-CC		=		g++
+CC		=		clang++
 
 NAME		=		plazza
 
 NAME_UI		=		plazza
 
 SRC		=		src/main.cpp				\
+				src/Plazza.cpp				\
 				src/PlazzaException.cpp			\
+				src/Lexer.cpp				\
+				src/Parser.cpp				\
 
 OBJ		=		$(SRC:.cpp=.o)
 
 OBJ_UI		=		$(SRC_UI:.cpp=.o)
 
-CPPFLAGS	+=		-Wall -Wextra -Werror -W -I./include
+CPPFLAGS	+=		-Wall -Wextra -Werror -W -I./include -std=c++11
 
 MR_CLEAN        =               find ./ \( -name "*~" -o -name "\#*\#" \) -delete
 
