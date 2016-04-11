@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr  4 10:43:00 2016 Valerian Polizzi
-## Last update Wed Apr  6 17:05:17 2016 Valerian Polizzi
+## Last update Mon Apr 11 16:28:06 2016 Loïc Weinhard
 ##
 
 CC		=		clang++
@@ -19,6 +19,8 @@ SRC		=		src/main.cpp				\
 				src/PlazzaException.cpp			\
 				src/Lexer.cpp				\
 				src/Parser.cpp				\
+				src/Process.cpp				\
+				src/Thread.cpp				\
 
 OBJ		=		$(SRC:.cpp=.o)
 
