@@ -1,11 +1,11 @@
 //
 // ProcessManager.hh for  in /home/weinha_l/Semestre_4/mouillette_plazza/include
-// 
+//
 // Made by Loïc Weinhard
 // Login   <weinha_l@epitech.net>
-// 
+//
 // Started on  Thu Apr 14 15:48:23 2016 Loïc Weinhard
-// Last update Thu Apr 14 16:04:31 2016 Loïc Weinhard
+// Last update Thu Apr 14 17:28:03 2016 Valerian Polizzi
 //
 
 #ifndef PROCESS_MANAGER_HH_

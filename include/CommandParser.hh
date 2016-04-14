@@ -5,26 +5,26 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Feb 12 02:58:34 2016 Valerian Polizzi
-// Last update Thu Apr 14 17:31:08 2016 Valerian Polizzi
+// Last update Thu Apr 14 17:26:42 2016 Valerian Polizzi
 //
 
-#ifndef _PARSER_HH_
-# define _PARSER_HH_
+#ifndef _COMMANDPARSER_HH_
+# define _COMMANDPARSER_HH_
 
 # include <map>
 # include <iostream>
 # include "PlazzaException.hh"
 # include "Lexer.hh"
 
-class Parser
+class CommandParser
 {
   // std::vector<void (Parser::*)(const std::string&, const std::string&)>	_fcn;
   std::string						_line;
   Lexer							_lex;
   std::string						_input;
 public:
-  Parser();
-  ~Parser();
+  CommandParser();
+  ~CommandParser();
   const Lexer		&getLexer();
   int			check_cmd(const std::string&);
   void			read();

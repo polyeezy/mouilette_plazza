@@ -5,22 +5,22 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Feb 12 03:01:42 2016 Valerian Polizzi
-// Last update Thu Apr 14 17:32:29 2016 Valerian Polizzi
+// Last update Thu Apr 14 17:32:02 2016 Valerian Polizzi
 //
 
-#include <Parser.hh>
+#include <CommandParser.hh>
 # include <fstream>
 
-Parser::Parser() : _line("0"), _lex("misc/lex/plazza.lex")
+CommandParser::CommandParser() : _line("0"), _lex("misc/lex/plazza.lex")
 {
-  //  this->_fcn.push_back(&Parser::createTrue);
+  //  this->_fcn.push_back(&CommandParser::createTrue);
 }
 
-Parser::~Parser()
+CommandParser::~CommandParser()
 {
 }
 
-void		Parser::feed(const std::string &input)
+void		CommandParser::feed(const std::string &input)
 {
   std::stringstream	content(input);
   std::string		token("");
@@ -36,12 +36,29 @@ void		Parser::feed(const std::string &input)
   // (this->*_fcn[token_id - 6])(token, value);
 }
 
-const Lexer		&Parser::getLexer()
+std::string	epur_alpha(std::string str)
+{
+  size_t i = 0;
+  size_t len = str.length();
+  while(i < len)
+    {
+      if (!isalnum(str[i]))
+	{
+	str.erase(i,1);
+	len--;
+      }
+      else
+	i++;
+    }
+  return (str);
+}
+
+const Lexer		&CommandParser::getLexer()
 {
   return (_lex);
 }
 
-int		Parser::check_cmd(const std::string &line)
+int		CommandParser::check_cmd(const std::string &line)
 {
   int		token_id = this->_lex.lex_line(line);
 
@@ -50,7 +67,7 @@ int		Parser::check_cmd(const std::string &line)
   return (token_id);
 }
 
-void		Parser::incr_line(void)
+void		CommandParser::incr_line(void)
 {
   this->_line = std::to_string(atoi(this->_line.c_str()) + 1);
 }
