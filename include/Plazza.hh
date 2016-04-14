@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Wed Apr  6 16:19:51 2016 Valerian Polizzi
-// Last update Wed Apr  6 17:15:14 2016 Valerian Polizzi
+// Last update Thu Apr 14 16:22:30 2016 Loïc Weinhard
 //
 
 #ifndef _PLAZZA_HH_
@@ -17,6 +17,7 @@
 # include <PlazzaException.hh>
 # include <Lexer.hh>
 # include <Parser.hh>
+# include <ProcessManager.hh>
 
 enum Information
   {
@@ -28,12 +29,15 @@ enum Information
 class Plazza
 {
 private:
-  int		_nb_threads;
-  Parser	_parser;
+  int			_nb_threads;
+  Parser		_parser;
+  ProcessManager*	_processes;
+
 public:
-  Plazza(const int nb_t);
+  Plazza(const int);
   ~Plazza();
-  void		read();
+
+  void			read();
 };
 
 #endif

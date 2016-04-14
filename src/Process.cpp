@@ -5,20 +5,15 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Mon Apr 11 16:12:03 2016 Loïc Weinhard
-// Last update Thu Apr 14 14:48:35 2016 Loïc Weinhard
+// Last update Thu Apr 14 16:46:46 2016 Loïc Weinhard
 //
 
 #include "Process.hh"
 
 Process::Process(const int max_threads)
 {
-  int		i;
-
-  i = 0;
-  while (i < max_threads)
-    {
-      i += 1;
-    }
+  _threads = new ThreadManager(max_threads);
+  _inactive = 0;
 }
 
 Process::~Process()
@@ -26,11 +21,14 @@ Process::~Process()
 
 }
 
+ThreadManager*		Process::getThreadManager() const
+{
+  return (_threads);
+}
+
 Thread*		Process::operator[](const size_t i) const
 {
-  if (i >= _threads.size())
-    return (NULL);
-  return (_threads[i]);
+  return (_threads->getThread(i));
 }
 
 bool		Process::isDead() const

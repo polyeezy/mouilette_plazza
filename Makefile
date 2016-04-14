@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr  4 10:43:00 2016 Valerian Polizzi
-## Last update Thu Apr 14 14:56:06 2016 Loïc Weinhard
+## Last update Thu Apr 14 16:39:45 2016 Loïc Weinhard
 ##
 
 CC		=		clang++
@@ -19,6 +19,8 @@ SRC		=		src/main.cpp				\
 				src/PlazzaException.cpp			\
 				src/Lexer.cpp				\
 				src/Parser.cpp				\
+				src/ThreadManager.cpp			\
+				src/ProcessManager.cpp			\
 				src/Process.cpp				\
 				src/Thread.cpp				\
 
