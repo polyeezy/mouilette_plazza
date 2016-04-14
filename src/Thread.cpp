@@ -5,14 +5,13 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Mon Apr 11 16:22:37 2016 Loïc Weinhard
-// Last update Mon Apr 11 16:29:49 2016 Loïc Weinhard
+// Last update Thu Apr 14 14:49:07 2016 Loïc Weinhard
 //
 
 #include "Thread.hh"
 
-Thread::Thread(int max_threads)
+Thread::Thread()
 {
-  (void)max_threads;
 }
 
 Thread::~Thread()

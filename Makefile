@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr  4 10:43:00 2016 Valerian Polizzi
-## Last update Mon Apr 11 16:28:06 2016 Loïc Weinhard
+## Last update Thu Apr 14 14:56:06 2016 Loïc Weinhard
 ##
 
 CC		=		clang++
@@ -26,7 +26,7 @@ OBJ		=		$(SRC:.cpp=.o)
 
 OBJ_UI		=		$(SRC_UI:.cpp=.o)
 
-CPPFLAGS	+=		-Wall -Wextra -Werror -W -I./include -std=c++11
+CPPFLAGS	+=		-Wall -Wextra -Werror -I./include -std=c++11
 
 MR_CLEAN        =               find ./ \( -name "*~" -o -name "\#*\#" \) -delete
 

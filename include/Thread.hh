@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Mon Apr 11 15:11:05 2016 Loïc Weinhard
-// Last update Mon Apr 11 16:25:55 2016 Loïc Weinhard
+// Last update Thu Apr 14 14:49:04 2016 Loïc Weinhard
 //
 
 #ifndef THREAD_HH_
@@ -26,7 +26,7 @@ private:
   bool				_active;
 
 public:
-  Thread(int);
+  Thread();
   ~Thread();
 
   //Getters

@@ -5,12 +5,12 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Mon Apr 11 16:12:03 2016 Loïc Weinhard
-// Last update Mon Apr 11 16:21:09 2016 Loïc Weinhard
+// Last update Thu Apr 14 14:48:35 2016 Loïc Weinhard
 //
 
 #include "Process.hh"
 
-Process::Process(int max_threads)
+Process::Process(const int max_threads)
 {
   int		i;
 
@@ -26,7 +26,7 @@ Process::~Process()
 
 }
 
-Thread*		Process::operator[](size_t i) const
+Thread*		Process::operator[](const size_t i) const
 {
   if (i >= _threads.size())
     return (NULL);
@@ -40,7 +40,7 @@ bool		Process::isDead() const
   return (false);
 }
 
-void		Process::refreshTime(float time)
+void		Process::refreshTime(const float time)
 {
   _inactive = time;
 }
