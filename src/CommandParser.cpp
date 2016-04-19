@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Feb 12 03:01:42 2016 Valerian Polizzi
-// Last update Tue Apr 19 11:13:42 2016 Valerian Polizzi
+// Last update Tue Apr 19 12:27:19 2016 Valerian Polizzi
 //
 
 #include <CommandParser.hh>
@@ -23,32 +23,49 @@ CommandParser::~CommandParser()
 void		CommandParser::feed(const std::string &input)
 {
   std::stringstream	content(input);
+  std::string		token("");
   std::string		file("");
-
   std::string		toget("");
   //  int			token_id(0);
 
   if (input.size() == 0)
     throw plazza::Exception("[plazza] Syntax error : Empty input (line " + this->_line + ")");
-  content >> file;		// FIRST PARAM MUST BE A FILE
 
-  if (this->_lex.lex_line(file) == 1 || this->_lex.lex_line(file) == -1)
-    throw plazza::Exception("[plazza] Syntax error : First parameter must be a file (line " + this->_line + ")");
-  while (content >> toget)
+  std::cout << "CMD : " << input << std::endl;
+
+  while (content >> token)	// Loop into line
     {
-      if (this->_lex.lex_line(toget) == 1)
-	content >> toget;
+      //   std::cout << token << std::endl;
+      if (this->_lex.lex_line(token) == 1 || this->_lex.lex_line(token) == -1) // 1 param = file
+	throw plazza::Exception("[plazza] Syntax error : First parameter must be a file (line " + this->_line + ")");
+
+      this->getCommandManager().createCommand();	// new cmd
+
+      while (this->_lex.lex_line(token) == 0)
+	{
+	  std::cout << "Add file " << token << std::endl;
+	  this->getCommandManager().addFile(token);
+	  content >> token;
+	}
+      	  content >> token;
+      	  std::cout << "Toget :  " << token << std::endl;
+      if (!(content >> token))
+	return;
     }
   // if (this->_lex.lex_line(toget) != 1)
   // throw plazza::Exception("[plazza] Syntax error : Last parameter must be like : '*_*'   (line " + this->_line + ")");
-  std::cout << file << " |  " << toget << std::endl;
+}
+
+CommandManager	&CommandParser::getCommandManager()
+{
+  return (this->_cmd_manager);
 }
 
 std::string	epur_alpha(std::string str)
 {
   size_t i = 0;
   size_t len = str.length();
-  while(i < len)
+  while (i < len)
     {
       if (!isalnum(str[i]))
 	{

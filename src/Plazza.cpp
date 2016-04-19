@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Wed Apr  6 16:21:09 2016 Valerian Polizzi
-// Last update Thu Apr 14 17:04:26 2016 Valerian Polizzi
+// Last update Tue Apr 19 12:15:48 2016 Valerian Polizzi
 //
 
 #include <Plazza.hh>
@@ -26,4 +26,5 @@ void		Plazza::read()
 
   std::getline(std::cin, input);
   _parser.feed(input);
+
 }
