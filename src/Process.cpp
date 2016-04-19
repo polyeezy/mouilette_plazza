@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Mon Apr 11 16:12:03 2016 Loïc Weinhard
-// Last update Thu Apr 14 16:46:46 2016 Loïc Weinhard
+// Last update Tue Apr 19 17:52:31 2016 Loïc Weinhard
 //
 
 #include "Process.hh"
@@ -41,4 +41,14 @@ bool		Process::isDead() const
 void		Process::refreshTime(const float time)
 {
   _inactive = time;
+}
+
+void		Process::fillQueue(const std::string &order)
+{
+  _queue.push_back(order);
+}
+
+void		Process::giveOrder(Thread *thread, const std::string &order)
+{
+  thread->setOrder(order);
 }

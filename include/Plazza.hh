@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Wed Apr  6 16:19:51 2016 Valerian Polizzi
-// Last update Tue Apr 19 12:01:22 2016 Valerian Polizzi
+// Last update Tue Apr 19 17:55:36 2016 Loïc Weinhard
 //
 
 #ifndef _PLAZZA_HH_
@@ -33,6 +33,7 @@ public:
 
   const CommandManager	&getCmdManager();
   void			read();
+  void			waitOrders();
 };
 
 #endif
