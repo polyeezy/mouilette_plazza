@@ -5,13 +5,13 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Feb 12 03:01:42 2016 Valerian Polizzi
-// Last update Thu Apr 14 17:32:02 2016 Valerian Polizzi
+// Last update Tue Apr 19 11:13:42 2016 Valerian Polizzi
 //
 
 #include <CommandParser.hh>
 # include <fstream>
 
-CommandParser::CommandParser() : _line("0"), _lex("misc/lex/plazza.lex")
+CommandParser::CommandParser() : _line("0"), _lex("misc/lex/command.lex")
 {
   //  this->_fcn.push_back(&CommandParser::createTrue);
 }
@@ -23,17 +23,25 @@ CommandParser::~CommandParser()
 void		CommandParser::feed(const std::string &input)
 {
   std::stringstream	content(input);
-  std::string		token("");
-  std::string		value("");
-  int			token_id(0);
+  std::string		file("");
 
-  content >> token >> value;
+  std::string		toget("");
+  //  int			token_id(0);
+
   if (input.size() == 0)
     throw plazza::Exception("[plazza] Syntax error : Empty input (line " + this->_line + ")");
-  if ((token_id = this->_lex.lex_line(token)) == -1)
-      throw plazza::Exception("[plzaa] Syntax error : Implicit input '" + input + "' (line " + this->_line + ")");
-  // if (token_id >= 6)
-  // (this->*_fcn[token_id - 6])(token, value);
+  content >> file;		// FIRST PARAM MUST BE A FILE
+
+  if (this->_lex.lex_line(file) == 1 || this->_lex.lex_line(file) == -1)
+    throw plazza::Exception("[plazza] Syntax error : First parameter must be a file (line " + this->_line + ")");
+  while (content >> toget)
+    {
+      if (this->_lex.lex_line(toget) == 1)
+	content >> toget;
+    }
+  // if (this->_lex.lex_line(toget) != 1)
+  // throw plazza::Exception("[plazza] Syntax error : Last parameter must be like : '*_*'   (line " + this->_line + ")");
+  std::cout << file << " |  " << toget << std::endl;
 }
 
 std::string	epur_alpha(std::string str)
@@ -63,7 +71,7 @@ int		CommandParser::check_cmd(const std::string &line)
   int		token_id = this->_lex.lex_line(line);
 
   if (token_id == -1)
-    throw plazza::Exception("[NTS] Parse Error : unknown command : '" + line + "' (line " + this->_line + ")");
+    throw plazza::Exception("[PLAZZA] Parse Error : unknown command : '" + line + "' (line " + this->_line + ")");
   return (token_id);
 }
 

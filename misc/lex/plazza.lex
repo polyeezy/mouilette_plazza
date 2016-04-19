@@ -1,5 +1,5 @@
 #PHONE
-0		%
+0	       P
 #MAIL
 1	       *@*.*
 #IP

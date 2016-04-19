@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Feb 12 02:58:34 2016 Valerian Polizzi
-// Last update Thu Apr 14 17:26:42 2016 Valerian Polizzi
+// Last update Tue Apr 19 11:16:14 2016 Valerian Polizzi
 //
 
 #ifndef _COMMANDPARSER_HH_
@@ -18,10 +18,11 @@
 
 class CommandParser
 {
-  // std::vector<void (Parser::*)(const std::string&, const std::string&)>	_fcn;
   std::string						_line;
   Lexer							_lex;
   std::string						_input;
+
+
 public:
   CommandParser();
   ~CommandParser();
