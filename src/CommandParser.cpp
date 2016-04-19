@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Feb 12 03:01:42 2016 Valerian Polizzi
-// Last update Tue Apr 19 12:27:19 2016 Valerian Polizzi
+// Last update Tue Apr 19 12:43:03 2016 Valerian Polizzi
 //
 
 #include <CommandParser.hh>
@@ -49,8 +49,9 @@ void		CommandParser::feed(const std::string &input)
 	}
       	  content >> token;
       	  std::cout << "Toget :  " << token << std::endl;
-      if (!(content >> token))
-	return;
+	  //this->getCommandManager().setInfoToGet(token);
+	  if (!(content >> token))			// no more token
+	    return;
     }
   // if (this->_lex.lex_line(toget) != 1)
   // throw plazza::Exception("[plazza] Syntax error : Last parameter must be like : '*_*'   (line " + this->_line + ")");
