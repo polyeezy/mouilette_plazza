@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Mon Apr 11 16:12:03 2016 Loïc Weinhard
-// Last update Thu Apr 21 14:45:11 2016 Loïc Weinhard
+// Last update Thu Apr 21 16:52:40 2016 Loïc Weinhard
 //
 
 #include "Process.hh"
@@ -43,7 +43,7 @@ void		Process::refreshTime(const float time)
   _inactive = time;
 }
 
-void		Process::giveOrder(Thread *thread, const std::string &order)
+void		Process::giveOrder(Thread *thread, Command *cmd)
 {
-  thread->setOrder(order);
+  thread->setOrder(cmd);
 }

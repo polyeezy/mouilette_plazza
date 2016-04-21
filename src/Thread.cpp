@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Mon Apr 11 16:22:37 2016 Loïc Weinhard
-// Last update Thu Apr 14 14:49:07 2016 Loïc Weinhard
+// Last update Thu Apr 21 16:51:42 2016 Loïc Weinhard
 //
 
 #include "Thread.hh"
@@ -25,7 +25,7 @@ pthread_t	Thread::getThread() const
   return (_thread);
 }
 
-std::string	Thread::getOrder() const
+Command*	Thread::getOrder() const
 {
   return (_order);
 }
@@ -55,13 +55,13 @@ void		Thread::UnlockMutex()
 
 }
 
-void		Thread::setOrder(const std::string &order)
+void		Thread::setOrder(Command *order)
 {
   _order = order;
 }
 
 void		Thread::clearOrder()
 {
-  _order = "";
+  delete _order;
   _active = false;
 }

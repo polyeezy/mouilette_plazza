@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Mon Apr 11 15:11:05 2016 Loïc Weinhard
-// Last update Thu Apr 14 14:49:04 2016 Loïc Weinhard
+// Last update Thu Apr 21 16:51:37 2016 Loïc Weinhard
 //
 
 #ifndef THREAD_HH_
@@ -13,6 +13,7 @@
 
 # include <string>
 # include <pthread.h>
+# include "Command.hh"
 # include "Mutex.hh"
 # include "VarCond.hh"
 
@@ -20,7 +21,7 @@ class	Thread
 {
 private:
   pthread_t			_thread;
-  std::string			_order;
+  Command*			_order;
   Mutex				*_mutex;
   VarCond			*_varcond;
   bool				_active;
@@ -31,7 +32,7 @@ public:
 
   //Getters
   pthread_t		getThread() const;
-  std::string		getOrder() const;
+  Command*		getOrder() const;
   Mutex*		getMutex() const;
   VarCond*		getVarCond() const;
   bool			isActive() const;
@@ -39,7 +40,7 @@ public:
   //Others
   void			LockMutex();
   void			UnlockMutex();
-  void			setOrder(const std::string &);
+  void			setOrder(Command *);
   void			clearOrder();
 };
 

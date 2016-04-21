@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Wed Apr  6 16:21:09 2016 Valerian Polizzi
-// Last update Thu Apr 21 14:41:32 2016 Valerian Polizzi
+// Last update Thu Apr 21 16:24:11 2016 Loïc Weinhard
 //
 
 #include <Plazza.hh>
@@ -29,13 +29,10 @@ void		Plazza::read()
   _parser.getCommandManager().dump();
 }
 
-void		Plazza::waitOrders()
+void		Plazza::loop()
 {
-  std::string	input("");
-
   while (true)
     {
-      std::getline(std::cin, input);
-      _parser.feed(input);
+      this->read();
     }
 }
