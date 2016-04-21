@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Thu Apr 14 16:01:11 2016 Loïc Weinhard
-// Last update Tue Apr 19 18:43:20 2016 Loïc Weinhard
+// Last update Thu Apr 21 15:15:36 2016 Loïc Weinhard
 //
 
 #include <ProcessManager.hh>
@@ -50,7 +50,27 @@ void		ProcessManager::fillQueue(const std::string &order)
   _orders.push_back(order);
 }
 
-void		ProcessManager::sendOrders()
+void		ProcessManager::sendOrder()
 {
+  size_t	i;
+  size_t	x;
 
+  i = 0;
+  while (_processes[i])
+    {
+      x = 0;
+      while (_processes[i][0][x])
+	{
+	  if (!_processes[i][0][x]->isActive())
+	    {
+	      _processes[i]->giveOrder(_processes[i][0][x], _orders.back());
+	      _orders.pop_back();
+	      return;
+	    }
+	  x += 1;
+	}
+      i += 1;
+    }
+  this->createProcess();
+  this->sendOrder();
 }
