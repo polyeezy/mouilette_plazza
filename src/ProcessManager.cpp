@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Thu Apr 14 16:01:11 2016 Loïc Weinhard
-// Last update Thu Apr 14 16:57:00 2016 Loïc Weinhard
+// Last update Tue Apr 19 18:43:20 2016 Loïc Weinhard
 //
 
 #include <ProcessManager.hh>
@@ -13,7 +13,6 @@
 ProcessManager::ProcessManager(const int nb_threads)
 {
   _nb_threads = nb_threads;
-  this->createProcess();
 }
 
 ProcessManager::~ProcessManager()
@@ -44,4 +43,14 @@ void		ProcessManager::deleteInactiveProcesses()
 	delete _processes[i];
       i += 1;
     }
+}
+
+void		ProcessManager::fillQueue(const std::string &order)
+{
+  _orders.push_back(order);
+}
+
+void		ProcessManager::sendOrders()
+{
+
 }
