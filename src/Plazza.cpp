@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Wed Apr  6 16:21:09 2016 Valerian Polizzi
-// Last update Tue Apr 19 17:58:54 2016 Loïc Weinhard
+// Last update Wed Apr 20 16:59:40 2016 Loïc Weinhard
 //
 
 #include <Plazza.hh>
@@ -30,11 +30,6 @@ void		Plazza::read()
 
 void		Plazza::waitOrders()
 {
-  std::string	input("");
-
   while (true)
-    {
-      std::getline(std::cin, input);
-      _parser.feed(input);
-    }
+    this->read();
 }

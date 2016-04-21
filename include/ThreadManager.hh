@@ -5,14 +5,14 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Thu Apr 14 15:57:13 2016 Loïc Weinhard
-// Last update Thu Apr 14 16:44:03 2016 Loïc Weinhard
+// Last update Thu Apr 21 14:43:10 2016 Loïc Weinhard
 //
 
 #ifndef THREAD_MANAGER_HH_
 # define THREAD_MANAGER_HH_
 
 # include <vector>
-# include <Thread.hh>
+# include "Thread.hh"
 
 class	ThreadManager
 {

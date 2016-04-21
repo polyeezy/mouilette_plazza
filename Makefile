@@ -5,28 +5,28 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr  4 10:43:00 2016 Valerian Polizzi
-## Last update Tue Apr 19 12:12:38 2016 Valerian Polizzi
+## Last update Thu Apr 21 15:02:08 2016 Loïc Weinhard
 ##
 
-CC		=		clang++
+CC		=		g++
 
 NAME		=		plazza
 
 NAME_UI		=		plazza
 
-SRC		=		src/main.cpp				\
-				src/Plazza.cpp				\
+SRC		=		src/Plazza.cpp				\
+				src/Process.cpp				\
 				src/PlazzaException.cpp			\
 				src/Lexer.cpp				\
 				src/Parser.cpp				\
 				src/CommandParser.cpp			\
 				src/ThreadManager.cpp			\
-				src/ProcessManager.cpp			\
 				src/CommandManager.cpp			\
 				src/CommunicationManager.cpp		\
 				src/DecryptManager.cpp			\
-				src/Process.cpp				\
 				src/Thread.cpp				\
+				src/main.cpp				\
+				src/ProcessManager.cpp			\
 
 OBJ		=		$(SRC:.cpp=.o)
 
