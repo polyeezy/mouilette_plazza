@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Tue Apr 19 11:19:53 2016 Valerian Polizzi
-// Last update Thu Apr 21 16:41:35 2016 Valerian Polizzi
+// Last update Thu Apr 21 17:05:59 2016 Valerian Polizzi
 //
 
 #ifndef _COMMANDMANAGER_HH_
@@ -30,7 +30,7 @@ public:
   void		addFile(const std::string &file);
   void		setInfoToGet(const std::string &);
   void		dump();
-  std::vector<Command*>		&getCommands();
+  std::vector<Command*>		getCommands();
 };
 
 #endif
