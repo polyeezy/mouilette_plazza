@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Tue Apr 19 11:24:39 2016 Valerian Polizzi
-// Last update Thu Apr 21 14:41:45 2016 Valerian Polizzi
+// Last update Thu Apr 21 16:41:59 2016 Valerian Polizzi
 //
 
 #include <CommandManager.hh>
@@ -40,4 +40,9 @@ void		CommandManager::dump()
     {
       (*it)->dump();
     }
+}
+
+std::vector<Command*>	&CommandManager::getCommands()
+{
+  return (_commands);
 }
