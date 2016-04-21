@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Tue Apr 19 11:19:53 2016 Valerian Polizzi
-// Last update Tue Apr 19 11:28:51 2016 Valerian Polizzi
+// Last update Thu Apr 21 13:30:39 2016 Valerian Polizzi
 //
 
 #ifndef _COMMANDMANAGER_HH_
@@ -14,18 +14,22 @@
 # include <string>
 # include <iostream>
 # include <Information.hh>
+# include <Command.hh>
+# include <vector>
 
 class CommandManager
 {
 private:
-  size_t	_current_idx;
+  size_t			_current_idx;
+  std::vector<Command*>		_commands;
 public:
   CommandManager();
   ~CommandManager();
 
   void		createCommand();
   void		addFile(const std::string &file);
-  void		setInfoToGet(const Information);
+  void		setInfoToGet(const std::string &);
+  void		dump();
 
 };
 

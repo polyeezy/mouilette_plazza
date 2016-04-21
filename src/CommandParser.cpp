@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Feb 12 03:01:42 2016 Valerian Polizzi
-// Last update Thu Apr 21 12:32:09 2016 Valerian Polizzi
+// Last update Thu Apr 21 14:40:27 2016 Valerian Polizzi
 //
 
 #include <CommandParser.hh>
@@ -26,32 +26,35 @@ void		CommandParser::feed(const std::string &input)
    std::string		token("");
    std::size_t		found;
 
+   std::string		next_cmd("");
+
   if (input.size() == 0)
     throw plazza::Exception("[plazza] Syntax error : Empty input (line " + this->_line + ")");
-  std::cout << "CMD : " << input << std::endl;
-  while (content >> token)	// Loop into line
-    {
-      if (this->_lex.lex_line(token) == 1 || this->_lex.lex_line(token) == -1) // 1 param = file
-	throw plazza::Exception("[plazza] Syntax error : First parameter must be a file (line " + this->_line + ")");
-      this->getCommandManager().createCommand();	// new cmd
-      while (this->_lex.lex_line(token) == 0)
+
+      found = input.find(';');
+      if (found != std::string::npos)
 	{
-	  std::cout << "Add file " << token << std::endl;
-	  this->getCommandManager().addFile(token);
-	  content >> token;
+	  std::string new_input(std::string(input).erase(found));
+	  std::string next_cmd(input.substr(found + 1));
+	  this->feed(new_input);
+	  this->feed(next_cmd);
+	  return;
 	}
-      	  content >> token;
-      	  std::cout << "Toget :  " << token << std::endl;
-	  //this->getCommandManager().setInfoToGet(token);
-	  found  = input.find(';');
-	  if (found != std::string::npos)
-	    this->feed(input.substr(found + 1));
-	  if (!(content >> token))			// no more token
-	    return;
-    }
-  // if (this->_lex.lex_line(toget) != 1)
-  // throw plazza::Exception("[plazza] Syntax error : Last parameter must be like : '*_*'   (line " + this->_line + ")");
+      while (content >> token)	// Loop into line
+	{
+	  if (this->_lex.lex_line(token) == 1 || this->_lex.lex_line(token) == -1) // 1 param = file
+	    throw plazza::Exception("[plazza] Syntax error : First parameter must be a file (line " + this->_line + ")");
+	  this->getCommandManager().createCommand();	// new cmd
+	  while (this->_lex.lex_line(token) == 0)
+	    {
+	      this->getCommandManager().addFile(token);
+	      content >> token;
+	    }
+
+	  this->getCommandManager().setInfoToGet(token);
+	}
 }
+
 
 CommandManager	&CommandParser::getCommandManager()
 {
