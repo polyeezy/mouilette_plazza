@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Thu Apr 14 16:01:11 2016 Loïc Weinhard
-// Last update Thu Apr 21 16:49:59 2016 Loïc Weinhard
+// Last update Thu Apr 21 17:06:43 2016 Loïc Weinhard
 //
 
 #include <ProcessManager.hh>
@@ -45,7 +45,7 @@ void		ProcessManager::deleteInactiveProcesses()
     }
 }
 
-void		ProcessManager::sendOrder(std::vector<Command*> *orders)
+void		ProcessManager::sendOrder()
 {
   size_t	i;
   size_t	x;
@@ -58,8 +58,8 @@ void		ProcessManager::sendOrder(std::vector<Command*> *orders)
 	{
 	  if (!_processes[i][0][x]->isActive())
 	    {
-	      _processes[i]->giveOrder(_processes[i][0][x], orders->back());
-	      orders->pop_back();
+	      _processes[i]->giveOrder(_processes[i][0][x], _orders.back());
+	      _orders.pop_back();
 	      return;
 	    }
 	  x += 1;
@@ -67,5 +67,10 @@ void		ProcessManager::sendOrder(std::vector<Command*> *orders)
       i += 1;
     }
   this->createProcess();
-  this->sendOrder(orders);
+  this->sendOrder();
+}
+
+void		ProcessManager::setOrders(std::vector<Command *> orders)
+{
+  _orders = orders;
 }
