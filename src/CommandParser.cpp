@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Feb 12 03:01:42 2016 Valerian Polizzi
-// Last update Thu Apr 21 14:40:27 2016 Valerian Polizzi
+// Last update Fri Apr 22 17:01:32 2016 Valerian Polizzi
 //
 
 #include <CommandParser.hh>
@@ -95,4 +95,9 @@ int		CommandParser::check_cmd(const std::string &line)
 void		CommandParser::incr_line(void)
 {
   this->_line = std::to_string(atoi(this->_line.c_str()) + 1);
+}
+
+std::vector<Command*>   &CommandParser::getCommands()
+{
+  return (_cmd_manager.getCommands());
 }

@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Wed Apr  6 16:19:51 2016 Valerian Polizzi
-// Last update Thu Apr 21 16:56:31 2016 Valerian Polizzi
+// Last update Fri Apr 22 16:50:01 2016 Valerian Polizzi
 //
 
 #ifndef _PLAZZA_HH_
@@ -26,7 +26,6 @@ class Plazza
 private:
   CommandParser		_parser;
   ProcessManager*	_processes;
-  CommandManager	_cmd_manager;
 public:
   Plazza(const int);
   ~Plazza();

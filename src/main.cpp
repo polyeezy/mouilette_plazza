@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Mon Apr  4 10:43:15 2016 Valerian Polizzi
-// Last update Thu Apr 21 16:17:18 2016 Loïc Weinhard
+// Last update Fri Apr 22 16:45:13 2016 Valerian Polizzi
 //
 
 #include <Plazza.hh>
@@ -14,7 +14,6 @@ int		main(int ac, char **av)
 {
   if (ac < 2)
     throw plazza::Exception("Usage : plazza THREADS_PER_PROCESS");
-
   Plazza	P(std::atoi(av[1]));
   return (0);
 }

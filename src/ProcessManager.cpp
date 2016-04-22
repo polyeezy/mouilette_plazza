@@ -1,11 +1,11 @@
 //
 // ProcessManager.cpp for  in /home/weinha_l/Semestre_4/mouillette_plazza/src
-// 
+//
 // Made by Loïc Weinhard
 // Login   <weinha_l@epitech.net>
-// 
+//
 // Started on  Thu Apr 14 16:01:11 2016 Loïc Weinhard
-// Last update Thu Apr 21 17:06:43 2016 Loïc Weinhard
+// Last update Fri Apr 22 17:04:17 2016 Valerian Polizzi
 //
 
 #include <ProcessManager.hh>
@@ -70,7 +70,8 @@ void		ProcessManager::sendOrder()
   this->sendOrder();
 }
 
-void		ProcessManager::setOrders(std::vector<Command *> orders)
+void		ProcessManager::setOrders(std::vector<Command *> &orders)
 {
   _orders = orders;
+  _orders[0]->dump();
 }

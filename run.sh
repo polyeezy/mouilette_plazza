@@ -1,1 +1,1 @@
-cat misc/commands/exemple | ./plazza 5
+cat misc/commands/exemple | ./plazza $1

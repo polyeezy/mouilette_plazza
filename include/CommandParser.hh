@@ -5,7 +5,7 @@
 // Login   <polizz_v@epitech.net>
 //
 // Started on  Fri Feb 12 02:58:34 2016 Valerian Polizzi
-// Last update Tue Apr 19 12:16:04 2016 Valerian Polizzi
+// Last update Fri Apr 22 17:01:18 2016 Valerian Polizzi
 //
 
 #ifndef _COMMANDPARSER_HH_
@@ -34,6 +34,7 @@ public:
   void			feed(const std::string&);
   void			incr_line(void);
   CommandManager	&getCommandManager();
+  std::vector<Command*>   &getCommands();
 };
 
 #endif
