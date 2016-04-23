@@ -5,7 +5,7 @@
 ## Login   <polyeezy@epitech.net>
 ## 
 ## Started on  Mon Apr  4 10:43:00 2016 Valerian Polizzi
-## Last update Thu Apr 21 17:15:00 2016 Valerian Polizzi
+## Last update Sat Apr 23 13:05:39 2016 Valerian Polizzi
 ##
 
 CC		=		clang++
@@ -21,6 +21,8 @@ SRC		=		src/main.cpp				\
 				src/Parser.cpp				\
 				src/Command.cpp				\
 				src/CommandParser.cpp			\
+				src/Socket.cpp				\
+				src/SocketServer.cpp			\
 				src/ThreadManager.cpp			\
 				src/ProcessManager.cpp			\
 				src/CommandManager.cpp			\

@@ -5,12 +5,14 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Wed Apr  6 16:19:51 2016 Valerian Polizzi
-// Last update Fri Apr 22 16:50:01 2016 Valerian Polizzi
+// Last update Sat Apr 23 13:15:33 2016 Valerian Polizzi
 //
 
 #ifndef _PLAZZA_HH_
 # define _PLAZZA_HH_
 
+# include <Socket.hh>
+# include <SocketServer.hh>
 # include <string>
 # include <iostream>
 # include <cstdlib>
