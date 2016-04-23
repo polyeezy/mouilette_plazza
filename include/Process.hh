@@ -5,7 +5,7 @@
 // Login   <weinha_l@epitech.net>
 // 
 // Started on  Mon Apr 11 15:13:16 2016 Loïc Weinhard
-// Last update Thu Apr 21 16:52:52 2016 Loïc Weinhard
+// Last update Sat Apr 23 17:00:56 2016 Loïc Weinhard
 //
 
 #ifndef PROCESS_HH_
@@ -14,6 +14,7 @@
 # include <vector>
 # include "ThreadManager.hh"
 # include "Command.hh"
+# include "Socket.hh"
 
 # define INACTIVE_LIMIT 5.0
 
@@ -23,6 +24,7 @@ class	Process
 private:
   ThreadManager*		_threads;
   float				_inactive;
+  Socket			_client;
 
 public:
   Process(const int);
