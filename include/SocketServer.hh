@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Sat Apr 23 12:19:10 2016 Valerian Polizzi
-// Last update Sat Apr 23 13:17:32 2016 Valerian Polizzi
+// Last update Sat Apr 23 15:47:49 2016 Valerian Polizzi
 //
 
 #ifndef _SOCKETSERVER_HH_
@@ -24,6 +24,7 @@
 class SocketServer
 {
 private:
+  int		_port;
   sockaddr_in	_server_sock;
   sockaddr_in	_client_sock;
   int		_server_fd;
@@ -31,7 +32,6 @@ private:
 public:
   SocketServer();
   ~SocketServer();
-
   int	run();
 };
 
