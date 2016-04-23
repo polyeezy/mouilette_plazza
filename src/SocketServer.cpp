@@ -5,7 +5,7 @@
 // Login   <polyeezy@epitech.net>
 //
 // Started on  Sat Apr 23 12:59:28 2016 Valerian Polizzi
-// Last update Sat Apr 23 15:48:16 2016 Valerian Polizzi
+// Last update Sat Apr 23 16:19:10 2016 Valerian Polizzi
 //
 
 #include <SocketServer.hh>
@@ -20,6 +20,7 @@ SocketServer::SocketServer() : _port(4242),_server_fd(-1), _client_fd(-1)
 
 SocketServer::~SocketServer()
 {
+  close(_server_fd);
 }
 
 int		SocketServer::run()
@@ -40,7 +41,7 @@ int		SocketServer::run()
 
   if ((_client_fd = accept(_server_fd, (struct sockaddr *)&_client_sock, (socklen_t*)&connect)) < 0)
     throw plazza::Exception("[PLAZZA] - can't accept client");
-  while ((len = recv(_client_fd, buff, 128, 0)) > 0)
+  while ((len = recv(_client_fd, buff, 128, 0)) > 0 && std::string(buff).compare("quit\r\n") != 0)
     write(0, buff, strlen(buff));
   return (0);
 }
